@@ -1,0 +1,39 @@
+{
+    "kind": "collectionType",
+    "collectionName": "courses",
+    "info": {
+        "singularName": "course",
+        "pluralName": "courses",
+        "displayName": "Course"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "CourseName": {
+            "type": "string"
+        },
+        "CourseDescription": {
+            "type": "text"
+        },
+        "CoursePrice": {
+            "type": "integer"
+        },
+        "CourseImage": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": false
+        },
+        "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "courses"
+        }
+    }
+}
